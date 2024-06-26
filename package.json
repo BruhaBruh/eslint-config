@@ -43,7 +43,9 @@
     "eslint-plugin-security": "^1.7.1"
   },
   "devDependencies": {
-    "@bruhabruh/prettier-config": "^1.0.0",
+    "@bruhabruh/eslint-config": "^1.0.0",
+    "@bruhabruh/prettier-config": "^1.1.0",
+    "@bruhabruh/tsconfig": "^1.0.0",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "eslint": "^8.57.0",
