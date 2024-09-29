@@ -1,9 +1,10 @@
 {
   "name": "@bruhabruh/eslint-config",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "BruhaBruh ESLint Config for projects",
   "author": "BruhaBruh",
   "license": "MIT",
+  "type": "module",
   "keywords": [
     "eslint",
     "config"
@@ -31,16 +32,22 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.11.1",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsdoc": "^50.3.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-security": "^1.7.1"
+    "eslint-plugin-security": "^3.0.1",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.7.0"
   },
   "devDependencies": {
     "@bruhabruh/eslint-config": "^1.0.0",
@@ -48,19 +55,17 @@
     "@bruhabruh/tsconfig": "^1.0.1",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "eslint": "^8.57.1",
+    "globals": "^15.9.0",
     "husky": "^9.1.6",
-    "nano-staged": "^0.8.0",
-    "prettier": "^3.3.3"
-  },
-  "peerDependencies": {
-    "eslint": "^8.57.1",
-    "prettier": "*"
+    "nano-staged": "^0.8.0"
   },
   "peerDependenciesMeta": {
     "prettier": {
       "optional": true
     }
+  },
+  "overrides": {
+    "eslint": "^9.11.1"
   },
   "nano-staged": {
     "*.{js,ts}": [

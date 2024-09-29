@@ -1,4 +1,3 @@
-/** @type {import('eslint').ESLint.ConfigData} */
-module.exports = {
-  extends: ['plugin:prettier/recommended'],
-};
+import prettier from 'eslint-plugin-prettier/recommended';
+
+export default [prettier];

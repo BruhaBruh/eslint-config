@@ -1,23 +1,29 @@
-const {WARNING, ERROR} = require('./constants');
+import security from 'eslint-plugin-security';
+import globals from 'globals';
 
-/** @type {import('eslint').ESLint.ConfigData} */
-module.exports = {
-  plugins: ['security'],
-  env: {
-    node: true,
+export default [
+  {
+    plugins: {
+      security: security,
+    },
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      'global-require': 'warn',
+      'security/detect-buffer-noassert': 'error',
+      'security/detect-child-process': 'error',
+      'security/detect-disable-mustache-escape': 'error',
+      'security/detect-eval-with-expression': 'error',
+      'security/detect-new-buffer': 'error',
+      'security/detect-no-csrf-before-method-override': 'error',
+      'security/detect-non-literal-regexp': 'error',
+      'security/detect-non-literal-require': 'error',
+      'security/detect-possible-timing-attacks': 'error',
+      'security/detect-pseudoRandomBytes': 'error',
+      'security/detect-unsafe-regex': 'error',
+    },
   },
-  rules: {
-    'global-require': WARNING,
-    'security/detect-buffer-noassert': ERROR,
-    'security/detect-child-process': ERROR,
-    'security/detect-disable-mustache-escape': ERROR,
-    'security/detect-eval-with-expression': ERROR,
-    'security/detect-new-buffer': ERROR,
-    'security/detect-no-csrf-before-method-override': ERROR,
-    'security/detect-non-literal-regexp': ERROR,
-    'security/detect-non-literal-require': ERROR,
-    'security/detect-possible-timing-attacks': ERROR,
-    'security/detect-pseudoRandomBytes': ERROR,
-    'security/detect-unsafe-regex': ERROR,
-  },
-};
+];

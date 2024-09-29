@@ -1,42 +1,42 @@
-const {OFF, WARNING} = require('./constants');
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 
-/** @type {import('eslint').ESLint.ConfigData} */
-module.exports = {
-  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended'],
-  plugins: ['react', 'react-hooks'],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+export default [
+  react.configs.flat.recommended,
+  react.configs.flat['jsx-runtime'],
+  {
+    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    plugins: {
+      'react-hooks': reactHooks,
     },
-  },
-  rules: {
-    'react/prop-types': WARNING,
-    'react/sort-comp': WARNING,
-  },
-  settings: {
-    react: {
-      version: 'detect',
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      'react/prop-types': 'warn',
+      'react/sort-comp': 'warn',
     },
-  },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        'react/prop-types': OFF,
-        'react/sort-comp': [
-          WARNING,
-          {
-            order: [
-              'static-variables',
-              'static-methods',
-              'instance-variables',
-              'lifecycle',
-              'render',
-              'everything-else',
-            ],
-          },
-        ],
+    settings: {
+      react: {
+        version: 'detect',
       },
     },
-  ],
-};
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    rules: {
+      'react/prop-types': 'off',
+      'react/sort-comp': [
+        'warn',
+        {
+          order: [
+            'static-variables',
+            'static-methods',
+            'instance-variables',
+            'lifecycle',
+            'render',
+            'everything-else',
+          ],
+        },
+      ],
+    },
+  },
+];

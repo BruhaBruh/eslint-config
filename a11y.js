@@ -1,9 +1,3 @@
-/** @type {import('eslint').ESLint.ConfigData} */
-module.exports = {
-  extends: ['plugin:jsx-a11y/recommended'],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-};
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+
+export default [jsxA11y.flatConfigs.recommended];

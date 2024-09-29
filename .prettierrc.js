@@ -1,1 +1,3 @@
-module.exports = require('@bruhabruh/prettier-config');
+import config from '@bruhabruh/prettier-config';
+
+export default config;

@@ -1,2 +1,3 @@
-/** @type {import('eslint').ESLint.ConfigData} */
-module.exports = require('./base');
+import base from './base.js';
+
+export default base;

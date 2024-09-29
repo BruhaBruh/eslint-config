@@ -1,10 +1,16 @@
-/** @type {import('eslint').ESLint.ConfigData} */
-module.exports = {
-  extends: ['./react'],
-  parserOptions: {
-    sourceType: 'module',
+import globals from 'globals';
+import react from './react.js';
+
+export default [
+  ...react,
+  {
+    languageOptions: {
+      parserOptions: {
+        sourceType: 'module',
+      },
+      globals: {
+        ...globals.browser,
+      },
+    },
   },
-  env: {
-    browser: true,
-  },
-};
+];
