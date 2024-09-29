@@ -142,10 +142,10 @@ export default tseslint.config(
       'no-unused-vars': 'off',
       'no-use-before-define': 'off',
       'no-useless-constructor': 'off',
-      '@typescript-eslint/no-array-constructor': 'warning',
+      '@typescript-eslint/no-array-constructor': 'warn',
       '@typescript-eslint/no-loop-func': 'error',
       '@typescript-eslint/no-redeclare': 'error',
-      '@typescript-eslint/no-shadow': 'warning',
+      '@typescript-eslint/no-shadow': 'warn',
       '@typescript-eslint/no-unused-expressions': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -154,10 +154,7 @@ export default tseslint.config(
           varsIgnorePattern: '^_',
         },
       ],
-      '@typescript-eslint/no-use-before-define': [
-        'warning',
-        { functions: false },
-      ],
+      '@typescript-eslint/no-use-before-define': ['warn', { functions: false }],
       '@typescript-eslint/no-useless-constructor': 'error',
 
       '@typescript-eslint/naming-convention': [
@@ -198,10 +195,10 @@ export default tseslint.config(
         { accessibility: 'no-public' },
       ],
       '@typescript-eslint/consistent-type-assertions': 'error',
-      '@typescript-eslint/no-explicit-any': 'warning',
+      '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/no-namespace': 'error',
-      '@typescript-eslint/no-non-null-assertion': 'warning',
+      '@typescript-eslint/no-non-null-assertion': 'warn',
       '@typescript-eslint/parameter-properties': 'error',
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
