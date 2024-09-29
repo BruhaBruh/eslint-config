@@ -10,59 +10,88 @@ npm install --save-dev eslint @bruhabruh/eslint-config
 
 Add `.eslintrc` file in the project root with the following content:
 
-```json
-{
-  "extends": "@bruhabruh/eslint-config",
-  "root": true
-}
+```js
+import mainConfig from '@bruhabruh/eslint-config';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...mainConfig,
+];
 ```
 
 Add client and server config files in corresponding directories:
 
-```json
-{
-  "extends": "@bruhabruh/eslint-config/server"
-}
+```js
+import clientConfig from '@bruhabruh/eslint-config/client.js';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...clientConfig,
+];
 ```
 
-```json
-{
-  "extends": "@bruhabruh/eslint-config/client"
-}
+```js
+import serverConfig from '@bruhabruh/eslint-config/server.js';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...serverConfig,
+];
 ```
 
 ### Prettier
 
 If you are using Prettier, extend root config with the additional rules:
 
-```json
-{
-  "extends": ["@bruhabruh/eslint-config", "@bruhabruh/eslint-config/prettier"],
-  "root": true
-}
+```js
+import mainConfig from '@bruhabruh/eslint-config';
+import prettierConfig from '@bruhabruh/eslint-config/prettier.js';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...mainConfig,
+  ...prettierConfig,
+];
 ```
 
 ### a11y
 
 If you want to spot accessibility issues, extend root config with the additional rules:
 
-```json
-{
-  "extends": ["@bruhabruh/eslint-config", "@bruhabruh/eslint-config/a11y"],
-  "root": true
-}
+```js
+import mainConfig from '@bruhabruh/eslint-config';
+import a11yConfig from '@bruhabruh/eslint-config/a11y.js';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...mainConfig,
+  ...a11yConfig,
+];
 ```
 
 ### Order
 
 if you want to enforce a convention in module import order, extend root config with the additional rules:
 
-```json
-{
-  "extends": [
-    "@bruhabruh/eslint-config",
-    "@bruhabruh/eslint-config/import-order"
-  ],
-  "root": true
-}
+```js
+import mainConfig from '@bruhabruh/eslint-config';
+import importOrderConfig from '@bruhabruh/eslint-config/import-order.js';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...mainConfig,
+  ...importOrderConfig,
+];
 ```
