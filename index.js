@@ -1,13 +1,13 @@
-import a11y from './a11y.js';
-import base from './base.js';
-import client from './client.js';
-import importOrder from './import-order.js';
-import json from './json.js';
-import markdown from './markdown.js';
-import prettier from './prettier.js';
-import react from './react.js';
-import server from './server.js';
-import tailwind from './tailwind.js';
+import a11y from './config/a11y.js';
+import base from './config/base.js';
+import client from './config/client.js';
+import importOrder from './config/import-order.js';
+import json from './config/json.js';
+import markdown from './config/markdown.js';
+import prettier from './config/prettier.js';
+import react from './config/react.js';
+import server from './config/server.js';
+import tailwind from './config/tailwind.js';
 
 export default {
   build: base.build,

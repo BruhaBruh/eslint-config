@@ -1,6 +1,6 @@
 {
   "name": "@bruhabruh/eslint-config",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "BruhaBruh ESLint Config for projects",
   "author": "BruhaBruh",
   "license": "MIT",
@@ -16,15 +16,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
-    "a11y.js",
-    "base.js",
-    "client.js",
-    "import-order.js",
-    "json.js",
-    "markdown.js",
-    "prettier.js",
-    "react.js",
-    "server.js",
+    "config",
     "index.d.ts"
   ],
   "scripts": {
