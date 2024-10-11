@@ -6,7 +6,7 @@ const recommended = [
   {
     ...react.configs.flat.recommended,
     name: 'react',
-    ignores: ['**/*.json', '**/*.md'],
+    ignores: ['**/*.json', '**/*.md', '**/*.mdx'],
   },
   {
     ...react.configs.flat['jsx-runtime'],

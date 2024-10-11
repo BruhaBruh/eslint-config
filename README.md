@@ -32,5 +32,6 @@ export default eslint.build(
   eslint.configs.prettier.recommended,
   eslint.configs.react.recommended, // for sort required importOrder below
   eslint.configs.server.recommended,
+  eslint.configs.tailwind.recommended,
 );
 ```

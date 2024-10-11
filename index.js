@@ -7,6 +7,7 @@ import markdown from './markdown.js';
 import prettier from './prettier.js';
 import react from './react.js';
 import server from './server.js';
+import tailwind from './tailwind.js';
 
 export default {
   build: base.build,
@@ -20,5 +21,6 @@ export default {
     prettier: prettier.configs,
     react: react.configs,
     server: server.configs,
+    tailwind: tailwind.configs,
   },
 };
