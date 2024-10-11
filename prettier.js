@@ -1,3 +1,13 @@
 import prettier from 'eslint-plugin-prettier/recommended';
 
-export default [prettier];
+/** @type {import('eslint').Linter.Config} */
+const recommended = {
+  ...prettier,
+  name: '@bruhabruh/eslint-config/prettier',
+};
+
+export default {
+  configs: {
+    recommended,
+  },
+};

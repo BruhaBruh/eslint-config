@@ -1,16 +1,24 @@
 import eslint from '@eslint/js';
+import stylisticJs from '@stylistic/eslint-plugin-js';
 import importPlugin from 'eslint-plugin-import';
 import jsdoc from 'eslint-plugin-jsdoc';
+import n from 'eslint-plugin-n';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  jsdoc.configs['flat/recommended-typescript'],
+/** @type {import('eslint').Linter.Config[]} */
+const recommended = [
   {
+    ...eslint.configs.recommended,
+    name: '@eslint/js',
+  },
+  ...tseslint.configs.recommended,
+  {
+    name: '@bruhabruh/eslint-config/base',
     plugins: {
+      n: n,
       import: importPlugin,
+      '@stylistic/js': stylisticJs,
       '@typescript-eslint/parser': tseslint,
     },
     languageOptions: {
@@ -38,7 +46,7 @@ export default tseslint.config(
       complexity: 'warn',
       'consistent-return': 'warn',
       curly: 'error',
-      'dot-location': ['error', 'property'],
+      '@stylistic/js/dot-location': ['error', 'property'],
       eqeqeq: ['warn', 'always'],
       'guard-for-in': 'error',
       'no-caller': 'error',
@@ -49,7 +57,7 @@ export default tseslint.config(
       'no-extend-native': 'error',
       'no-extra-bind': 'warn',
       'no-extra-label': 'error',
-      'no-floating-decimal': 'error',
+      '@stylistic/js/no-floating-decimal': 'error',
       'no-global-assign': 'warn', // eslint:recommended
       'no-implicit-coercion': 'warn',
       'no-implicit-globals': 'warn',
@@ -75,7 +83,7 @@ export default tseslint.config(
       'no-void': 'error',
       'no-with': 'error',
       radix: 'warn',
-      'wrap-iife': ['error', 'inside'],
+      '@stylistic/js/wrap-iife': ['error', 'inside'],
 
       // Variables
       'no-label-var': 'error',
@@ -85,23 +93,23 @@ export default tseslint.config(
       'no-use-before-define': ['warn', { functions: false }],
 
       // Node.js and CommonJS
-      'callback-return': 'warn',
-      'handle-callback-err': 'warn',
-      'no-new-require': 'error',
-      'no-path-concat': 'warn',
+      'n/callback-return': 'warn',
+      'n/handle-callback-err': 'warn',
+      'n/no-new-require': 'error',
+      'n/no-path-concat': 'warn',
 
       // Stylistic Issues
       camelcase: ['error', { properties: 'never' }],
-      'comma-style': ['error', 'last'],
+      '@stylistic/js/comma-style': ['error', 'last'],
       'max-depth': ['warn', { maximum: 5 }],
       'new-cap': 'error',
-      'new-parens': 'error',
+      '@stylistic/js/new-parens': 'error',
       'no-array-constructor': 'warn',
       'no-bitwise': 'error',
       'no-lonely-if': 'warn',
       'no-negated-condition': 'warn',
       'no-nested-ternary': 'warn',
-      'no-new-object': 'warn',
+      'no-object-constructor': 'warn',
       'no-restricted-syntax': ['error', 'WithStatement'],
       'no-unneeded-ternary': 'error',
       'sort-imports': [
@@ -126,6 +134,7 @@ export default tseslint.config(
     },
   },
   {
+    name: '@bruhabruh/eslint-config/base/typescript',
     files: ['**/*.{ts,tsx}'],
     rules: {
       // TypeScript compiler handles these on its own
@@ -216,4 +225,18 @@ export default tseslint.config(
       ],
     },
   },
-);
+];
+
+/** @type {import('eslint').Linter.Config[]} */
+const full = [jsdoc.configs['flat/recommended-typescript']];
+
+/** @type {(...configs: import('eslint').Linter.Config[] => unknown[]} */
+const build = (...configs) => tseslint.config(...configs);
+
+export default {
+  build,
+  configs: {
+    recommended,
+    full,
+  },
+};

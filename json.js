@@ -1,10 +1,20 @@
 import json from '@eslint/json';
 
-export default [
-  {
-    files: ['**/*.json'],
-    ignores: ['package-lock.json'],
-    language: 'json/json',
-    ...json.configs.recommended,
+/** @type {import('eslint').Linter.Config} */
+const recommended = {
+  ...json.configs.recommended,
+  files: ['**/*.json'],
+  ignores: ['package-lock.json'],
+  language: 'json/json',
+  name: '@bruhabruh/eslint-config/json',
+  rules: {
+    ...json.configs.recommended.rules,
+    'no-irregular-whitespace': 'off',
   },
-];
+};
+
+export default {
+  configs: {
+    recommended,
+  },
+};
