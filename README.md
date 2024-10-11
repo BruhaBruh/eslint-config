@@ -95,3 +95,33 @@ export default [
   ...importOrderConfig,
 ];
 ```
+
+### JSON
+
+```js
+import mainConfig from '@bruhabruh/eslint-config';
+import jsonConfig from '@bruhabruh/eslint-config/json.js';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...mainConfig,
+  ...jsonConfig,
+];
+```
+
+### Markdown
+
+```js
+import mainConfig from '@bruhabruh/eslint-config';
+import markdownConfig from '@bruhabruh/eslint-config/markdown.js';
+
+export default [
+  {
+    ignores: ['dist', 'node_modules', 'coverage'],
+  },
+  ...mainConfig,
+  ...markdownConfig,
+];
+```
