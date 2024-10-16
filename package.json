@@ -1,6 +1,6 @@
 {
   "name": "@bruhabruh/eslint-config",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "BruhaBruh ESLint Config for projects",
   "author": "BruhaBruh",
   "license": "MIT",
@@ -32,13 +32,13 @@
     "@eslint/json": "^0.5.0",
     "@eslint/markdown": "^6.2.0",
     "@stylistic/eslint-plugin-js": "^2.9.0",
-    "@typescript-eslint/eslint-plugin": "^8.8.1",
-    "@typescript-eslint/parser": "^8.8.1",
+    "@typescript-eslint/eslint-plugin": "^8.9.0",
+    "@typescript-eslint/parser": "^8.9.0",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsdoc": "^50.3.1",
+    "eslint-plugin-jsdoc": "^50.4.1",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-n": "^17.11.1",
     "eslint-plugin-prettier": "^5.2.1",
@@ -47,7 +47,7 @@
     "eslint-plugin-security": "^3.0.1",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "prettier": "^3.3.3",
-    "typescript-eslint": "^8.8.1"
+    "typescript-eslint": "^8.9.0"
   },
   "devDependencies": {
     "@bruhabruh/prettier-config": "^1.1.1",
