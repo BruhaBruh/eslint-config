@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Linter } from 'eslint';
 
 declare namespace Base {
