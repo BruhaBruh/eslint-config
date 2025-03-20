@@ -130,7 +130,7 @@ const recommended = [
       'require-yield': 'warn', // eslint:recommended
 
       'import/no-duplicates': ['error', { considerQueryString: true }],
-      'import/no-extraneous-dependencies': ['error', { includeTypes: true }],
+      'import/no-extraneous-dependencies': 'off',
     },
   },
   {
@@ -151,6 +151,7 @@ const recommended = [
       'no-unused-vars': 'off',
       'no-use-before-define': 'off',
       'no-useless-constructor': 'off',
+      '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-array-constructor': 'warn',
       '@typescript-eslint/no-loop-func': 'error',
       '@typescript-eslint/no-redeclare': 'error',

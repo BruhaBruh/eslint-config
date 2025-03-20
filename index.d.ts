@@ -38,10 +38,6 @@ declare namespace Server {
   const configs: Record<'recommended', Linter.Config>;
 }
 
-declare namespace Tailwind {
-  const configs: Record<'recommended', Linter.Config>;
-}
-
 declare const _default: {
   build: typeof Base.build;
   configs: {
@@ -54,7 +50,6 @@ declare const _default: {
     prettier: typeof Prettier.configs;
     react: typeof React.configs;
     server: typeof Server.configs;
-    tailwind: typeof Tailwind.configs;
   };
 };
 
