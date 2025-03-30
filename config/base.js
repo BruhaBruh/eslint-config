@@ -29,7 +29,7 @@ const recommended = [
     },
     settings: {
       'import/parsers': {
-        '@typescript-eslint/parser': ['.ts', '.tsx'],
+        '@typescript-eslint/parser': ['.ts', '.tsx', '.vue'],
       },
       'import/resolver': {
         typescript: true,
@@ -135,7 +135,7 @@ const recommended = [
   },
   {
     name: '@bruhabruh/eslint-config/base/typescript',
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx,vue}'],
     rules: {
       // TypeScript compiler handles these on its own
       strict: 'off',
