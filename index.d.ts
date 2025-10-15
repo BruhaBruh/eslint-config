@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Linter } from 'eslint';
+import type { Linter } from 'eslint';
 
 declare namespace Base {
   const build: (...configs: Linter.Config[]) => unknown[]; // Определяешь точный тип, если известен
