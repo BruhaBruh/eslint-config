@@ -212,7 +212,7 @@ const recommended = [
       '@typescript-eslint/parameter-properties': 'error',
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
-      '@typescript-eslint/type-annotation-spacing': [
+      '@stylistic/js/type-annotation-spacing': [
         'error',
         {
           before: true,
