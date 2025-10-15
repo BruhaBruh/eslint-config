@@ -175,7 +175,7 @@ const recommended = [
           leadingUnderscore: 'forbid',
         },
       ],
-      '@typescript-eslint/member-delimiter-style': 'error',
+      '@stylistic/js/member-delimiter-style': 'error',
       '@typescript-eslint/member-ordering': [
         'error',
         {
